@@ -23,6 +23,7 @@ def setup(t, **kw):
                     Family(tag='chmh2325', ticket=t, nodes=[
                         StandaloneAlaroForecast(tag='forecast-alaro1_sfx-chmh2325', ticket=t, **kw),
                         ], **kw),
+                    ], **kw),
                 ], **kw),
         ],
     )
