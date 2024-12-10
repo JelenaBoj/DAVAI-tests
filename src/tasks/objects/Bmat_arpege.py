@@ -18,15 +18,15 @@ def setup(t, **kw):
                 Family(tag='default_compilation_flavour', ticket=t, nodes=[
                     BmatSimple(tag='BmatSp', ticket=t, **kw),
                     BmatFlowDependent(tag='BmatWv', ticket=t, **kw),
-                    EnVarAdjoint(tag='EnVarAdjoint', ticket=t, **kw),
-                    LoopFamily(tag='ensread', ticket=t,
-                        loopconf='mpireads',
-                        loopsuffix='-mpi{}',
-                        nodes=[
-                        Family('EnsRead', ticket=t, on_error='delayed_fail', nodes=[
-                            EnsembleRead(tag='EnsembleRead', ticket=t, **kw),
-                            ], **kw),
-                        ], **kw),
+                    #EnVarAdjoint(tag='EnVarAdjoint', ticket=t, **kw),
+                    #LoopFamily(tag='ensread', ticket=t,
+                    #    loopconf='mpireads',
+                    #    loopsuffix='-mpi{}',
+                    #    nodes=[
+                    #    Family('EnsRead', ticket=t, on_error='delayed_fail', nodes=[
+                    #        EnsembleRead(tag='EnsembleRead', ticket=t, **kw),
+                    #        ], **kw),
+                    #    ], **kw),
                     ], **kw),
                 ], **kw),
             ], **kw),

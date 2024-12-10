@@ -1,4 +1,5 @@
 forecasts:
+# Currently canonical forecasts do not complete in 2 hour alotted time
     - canonical_forecasts  # canonical forecasts = close to operations, including extra components
     - standalone_forecasts  # standalone forecasts = "pure" toy models forecasts without any extra component (DFI, IAU, Fullpos...)
 
@@ -9,12 +10,15 @@ assim:
 
 # mixs: jobs containing several tasks of various families
 mixs:
+# Prep steps fail to compare SFX.SEAICE_SCHEM properly - no sense in running a forecast without the prep
     - PF  # Prep-Forecast (using older PGD)
+# Prep steps fail to compare SFX.SEAICE_SCHEM properly - These cases only test PGD creation
     - PPF  # PGD-Prep-Forecast (using new PGD)
 
 objects:
     - Bmat_arpege  # Construction and reading of a B-matrix using an ensemble, EnVar unit tests
-    - ModelTL_arpege # TL model, adjoint test
+# OOPS based expert (OOPSmodelADExpert) can't be found - no sense to test
+#    - ModelTL_arpege # TL model, adjoint test
 
 fullpos:
     - Fp_lbc  # Fp_lbc = Fullpos creation of LBC files

@@ -32,7 +32,7 @@ def setup(t, **kw):
                         PGD(tag='pgd-arpege-globaltst149c24', ticket=t, **kw),
                         ], **kw),
                     Prep(tag='prep-arpege-globaltst149c24', ticket=t, **kw),
-                    StandaloneArpegeForecast(tag='forecast-arpege-globaltst149c24', ticket=t, **kw),
+                    #StandaloneArpegeForecast(tag='forecast-arpege-globaltst149c24', ticket=t, **kw),
                     ], **kw),
                 ], **kw),
             ], **kw),

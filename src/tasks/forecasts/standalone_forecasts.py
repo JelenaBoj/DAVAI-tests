@@ -38,13 +38,15 @@ def setup(t, **kw):
                         StandaloneAromeForecast(tag='forecast-arome-corsica2500', ticket=t, **kw),
                         ], **kw),
                     ], **kw),
-                Family(tag='alaro', ticket=t, on_error='delayed_fail', nodes=[
-                    Family(tag='antwrp1300', ticket=t, nodes=[
-                        StandaloneAlaroForecast(tag='forecast-alaro0-antwrp1300', on_error='delayed_fail', ticket=t, **kw),
-                        StandaloneAlaroForecast(tag='forecast-alaro1-antwrp1300', ticket=t, **kw),
-                        ], **kw),
+                ], **kw),
+        Family(tag='default_compilation_flavour', ticket=t, nodes=[
+# All alaro forecasts crash in single precision (no need to run) - but still run double precision
+            Family(tag='alaro', ticket=t, on_error='delayed_fail', nodes=[
+                Family(tag='antwrp1300', ticket=t, nodes=[
+                    StandaloneAlaroForecast(tag='forecast-alaro0-antwrp1300', on_error='delayed_fail', ticket=t, **kw),
+                    StandaloneAlaroForecast(tag='forecast-alaro1-antwrp1300', ticket=t, **kw),
                     ], **kw),
                 ], **kw),
+            ], **kw),
         ],
     )
-
